@@ -2,8 +2,11 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@CalendarBundle/Resources/config/services.yml" }
-    - { resource: "@ModuleBundle/Resources/config/services.yml" }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
+    - { resource: "@PlanningBundle/Resources/config/services.yml" }
+    - { resource: "@OutilsBundle/Resources/config/services.yml" }
+    - { resource: "@GestionModuleBundle/Resources/config/services.yml" }
+    - { resource: "@GestionERPBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -64,17 +67,19 @@ doctrine:
                 charset:  UTF8
 
     orm:
-        default_entity_manager: default
+        default_entity_manager: eniplanner
         entity_managers:
-            default:
-                connection: default
+            erp:
+                connection: erp
                 mappings:
-                    AppBundle:  ~
-                    AcmeStoreBundle: ~
-            customer:
-                connection: customer
+                    GestionERPBundle: ~
+            eniplanner:
+                connection: eniplanner
                 mappings:
-                    AcmeCustomerBundle: ~
+                    GestionModuleBundle: ~
+                    OutilsBundle: ~
+                    PlanningBundle: ~
+                    UserBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:

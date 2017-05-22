@@ -1,0 +1,33 @@
+<?php
+
+namespace PlanningBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Statutcalendrier
+ *
+ * @ORM\Table(name="StatutCalendrier")
+ * @ORM\Entity
+ */
+class Statutcalendrier
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="IdStatutCalendrier", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idstatutcalendrier;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LibelleStatut", type="string", length=50, nullable=false)
+     */
+    private $libellestatut;
+
+
+}
+

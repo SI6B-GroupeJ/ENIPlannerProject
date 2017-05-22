@@ -1,0 +1,50 @@
+<?php
+
+namespace OutilsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Exportfichier
+ *
+ * @ORM\Table(name="ExportFichier", indexes={@ORM\Index(name="IDX_6CB659FA28B0F9AB", columns={"IdCalendrier"})})
+ * @ORM\Entity
+ */
+class Exportfichier
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="IdExportFichier", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idexportfichier;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="UrlPDF", type="string", length=255, nullable=true)
+     */
+    private $urlpdf;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="UrlRTF", type="string", length=255, nullable=true)
+     */
+    private $urlrtf;
+
+    /**
+     * @var \Calendrier
+     *
+     * @ORM\ManyToOne(targetEntity="Calendrier")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="IdCalendrier", referencedColumnName="IdCalendrier")
+     * })
+     */
+    private $idcalendrier;
+
+
+}
+

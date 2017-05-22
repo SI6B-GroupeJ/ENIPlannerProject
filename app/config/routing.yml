@@ -1,10 +1,28 @@
-module:
-    resource: "@ModuleBundle/Resources/config/routing.yml"
-    prefix:   /module
-
-calendar:
-    resource: "@CalendarBundle/Resources/config/routing.yml"
+gestion_erp:
+    resource: "@GestionERPBundle/Controller/"
+    type:     annotation
     prefix:   /
+
+gestion_module:
+    resource: "@GestionModuleBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+outils:
+    resource: "@OutilsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+planning:
+    resource: "@PlanningBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 
 
 

@@ -1,0 +1,40 @@
+<?php
+
+namespace OutilsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Historisation
+ *
+ * @ORM\Table(name="Historisation")
+ * @ORM\Entity
+ */
+class Historisation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="IdHistorisation", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idhistorisation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Detail", type="string", length=255, nullable=false)
+     */
+    private $detail;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateHeureModif", type="datetime", nullable=false)
+     */
+    private $dateheuremodif;
+
+
+}
+
