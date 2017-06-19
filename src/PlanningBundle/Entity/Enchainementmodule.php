@@ -173,11 +173,11 @@ class Enchainementmodule
     /**
      * Set idmoduleindependant
      *
-     * @param \PlanningBundle\Entity\Moduleindependant $idmoduleindependant
+     * @param \GestionModuleBundle\Entity\Moduleindependant $idmoduleindependant
      *
      * @return Enchainementmodule
      */
-    public function setIdmoduleindependant(\PlanningBundle\Entity\Moduleindependant $idmoduleindependant = null)
+    public function setIdmoduleindependant(\GestionModuleBundle\Entity\Moduleindependant $idmoduleindependant = null)
     {
         $this->idmoduleindependant = $idmoduleindependant;
 

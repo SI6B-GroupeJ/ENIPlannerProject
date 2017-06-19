@@ -31,7 +31,7 @@ class Purge
     /**
      * @var \Calendrier
      *
-     * @ORM\ManyToOne(targetEntity="Calendrier")
+     * @ORM\ManyToOne(targetEntity="PlanningBundle\Entity\Calendrier")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="IdCalendrier", referencedColumnName="IdCalendrier")
      * })
@@ -77,11 +77,11 @@ class Purge
     /**
      * Set idcalendrier
      *
-     * @param \OutilsBundle\Entity\Calendrier $idcalendrier
+     * @param \PlanningBundle\Entity\Calendrier $idcalendrier
      *
      * @return Purge
      */
-    public function setIdcalendrier(\OutilsBundle\Entity\Calendrier $idcalendrier = null)
+    public function setIdcalendrier(\PlanningBundle\Entity\Calendrier $idcalendrier = null)
     {
         $this->idcalendrier = $idcalendrier;
 
@@ -91,7 +91,7 @@ class Purge
     /**
      * Get idcalendrier
      *
-     * @return \OutilsBundle\Entity\Calendrier
+     * @return \PlanningBundle\Entity\Calendrier
      */
     public function getIdcalendrier()
     {

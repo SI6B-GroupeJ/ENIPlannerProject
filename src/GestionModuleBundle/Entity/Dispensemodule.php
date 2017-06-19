@@ -45,7 +45,7 @@ class Dispensemodule
     /**
      * @var \Enchainementmodule
      *
-     * @ORM\ManyToOne(targetEntity="Enchainementmodule")
+     * @ORM\ManyToOne(targetEntity="PlanningBundle\Entity\Enchainementmodule")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="IdEnchainement", referencedColumnName="IdEnchainement")
      * })
@@ -139,11 +139,11 @@ class Dispensemodule
     /**
      * Set idenchainement
      *
-     * @param \GestionModuleBundle\Entity\Enchainementmodule $idenchainement
+     * @param \PlanningBundle\Entity\Enchainementmodule $idenchainement
      *
      * @return Dispensemodule
      */
-    public function setIdenchainement(\GestionModuleBundle\Entity\Enchainementmodule $idenchainement = null)
+    public function setIdenchainement(\PlanningBundle\Entity\Enchainementmodule $idenchainement = null)
     {
         $this->idenchainement = $idenchainement;
 
@@ -153,7 +153,7 @@ class Dispensemodule
     /**
      * Get idenchainement
      *
-     * @return \GestionModuleBundle\Entity\Enchainementmodule
+     * @return \PlanningBundle\Entity\Enchainementmodule
      */
     public function getIdenchainement()
     {
