@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new OutilsBundle\OutilsBundle(),
             new GestionModuleBundle\GestionModuleBundle(),
             new GestionERPBundle\GestionERPBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
