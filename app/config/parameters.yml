@@ -5,14 +5,11 @@ parameters:
     database_name: ERP_ENI
     database_user: root
     database_password: Pa$$w0rd
-
     database_host2: localhost
     database_port2: 1433
     database_name2: ENIPlanner
     database_user2: eniprojet
     database_password2: eniprojet
-
-
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: paul.savean2014@campus-eni.fr
