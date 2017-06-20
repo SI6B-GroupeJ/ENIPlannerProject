@@ -80,6 +80,10 @@ accueil:
     path:     /
     defaults: { _controller: PlanningBundle:Default:index }
 
+accueil_consultant:
+    path:     /consultant
+    defaults: { _controller: PlanningBundle:Default:indexConsultant }
+
 consultation_stagiaire:
     path:     /stagiaire/consultation
     defaults: { _controller: PlanningBundle:Default:consultationStagiaire }

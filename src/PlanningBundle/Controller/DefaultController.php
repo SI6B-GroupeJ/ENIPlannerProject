@@ -16,6 +16,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/consultant")
+     */
+    public function indexConsultantAction()
+    {
+        return $this->render('PlanningBundle:Default:indexConsultant.html.twig');
+    }
+
+    /**
      * @Route("/stagiaire/consultation")
      */
     public function consultationStagiaireAction()
