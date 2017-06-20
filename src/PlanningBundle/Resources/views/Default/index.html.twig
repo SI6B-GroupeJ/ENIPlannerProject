@@ -1,1 +1,83 @@
-Hello World!
+{% extends 'menuAdmin.html.twig' %}
+
+{% block body %}
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+            <!--overview start-->
+
+            <!--//////////
+            MENU
+            //////////
+            -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li><i class="fa fa-laptop"></i>Recherche d'un stagiaire</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="bs-example">
+                <form class="form-inline" role="form">
+                    <div class="col-xs-4 col-sm-4 col-md-2">
+                        <label class="sr-only" for="inputNom">Nom</label>
+                        <input type="text" class="form-control" id="inputNom" placeholder="Nom">
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-2">
+                        <label class="sr-only" for="inputPrenom">Prenom</label>
+                        <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom">
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-2">
+                        <label class="sr-only" for="inputPrenom">Entreprise</label>
+                        <input type="text" class="form-control" id="inputEntreprise" placeholder="Entreprise">
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-2">
+                        <select class="form-control" id="exampleSelect1">
+                            <option value="" disabled selected>Choisir un lieu</option>
+                            <option>Nantes</option>
+                            <option>Rennes</option>
+                            <option>Niort</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-2">
+                        <select class="form-control" id="exampleSelect1">
+                            <option value="" disabled selected>Choisir une formation</option>
+                            <option>DL</option>
+                            <option>TSRI</option>
+                            <option>T2SI</option>
+                            <option>CDI</option>
+                            <option>ASR</option>
+                            <option>MS2I-SI</option>
+                            <option>MS2I-INF</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-2">
+                        <a class="btn btn-success" href="indexResultatRecherche.html">Rechercher</a>
+                        <div><br></div>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Entreprise</th>
+                    <th>Formation</th>
+                    <th>Date Début</th>
+                    <th>Date Fin</th>
+                    <th>Statut</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <a class="btn btn-default pull-right" href="indexConsultant.html">Mode Consultant</a>
+    </section>
+{% endblock %}

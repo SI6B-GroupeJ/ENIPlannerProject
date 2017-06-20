@@ -8,10 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/historisation")
      */
-    public function indexAction()
+    public function historisationAction()
     {
-        return $this->render('OutilsBundle:Default:index.html.twig');
+        return $this->render('OutilsBundle:Default:Historisation.html.twig');
     }
 }

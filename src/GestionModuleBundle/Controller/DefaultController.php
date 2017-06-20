@@ -8,10 +8,34 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/moduleIndependant")
      */
-    public function indexAction()
+    public function moduleIndependantAction()
     {
-        return $this->render('GestionModuleBundle:Default:index.html.twig');
+        return $this->render('GestionModuleBundle:Default:AffichageModuleIndependant.html.twig');
+    }
+
+    /**
+     * @Route("/moduleIndependant/add")
+     */
+    public function addModuleIndependantAction()
+    {
+        return $this->render('GestionModuleBundle:Default:CreationModuleIndependant.html.twig');
+    }
+
+    /**
+     * @Route("/enchainementModule")
+     */
+    public function enchainementModuleAction()
+    {
+        return $this->render('GestionModuleBundle:Default:GestionEnchainementModules.html.twig');
+    }
+
+    /**
+     * @Route("/enchainementModule/add")
+     */
+    public function addEnchainementModuleAction()
+    {
+        return $this->render('GestionModuleBundle:Default:CreationEnchainementModule.html.twig');
     }
 }

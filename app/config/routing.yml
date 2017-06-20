@@ -43,6 +43,69 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
 
+# GestionERPBundle
+
+# GestionModuleBundle
+consultation_module_independant:
+    path:     /moduleIndependant
+    defaults: { _controller: GestionModuleBundle:Default:moduleIndependant }
+
+creation_module_independant:
+    path:     /moduleIndependant/add
+    defaults: { _controller: GestionModuleBundle:Default:addModuleIndependant }
+
+consultation_enchainement_module:
+    path:     /enchainementModule
+    defaults: { _controller: GestionModuleBundle:Default:enchainementModule }
+
+creation_enchainement_module:
+    path:     /enchainementModule/add
+    defaults: { _controller: GestionModuleBundle:Default:addEnchainementModule }
+
+# OutilsBundle
+historisation:
+    path:     /historisation
+    defaults: { _controller: OutilsBundle:Default:historisation }
+
+# PlanningBundle
+accueil:
+    path:     /
+    defaults: { _controller: PlanningBundle:Default:index }
+
+consultation_stagiaire:
+    path:     /stagiaire/consultation
+    defaults: { _controller: PlanningBundle:Default:consultationStagiaire }
+
+consultation_stagiaire_consultant:
+    path:     /stagiaire/consultation/consultant
+    defaults: { _controller: PlanningBundle:Default:consultationStagiaireConsultant }
+
+consultation_stagiaire_sanscalendrier:
+    path:     /stagiaire/consultation/sanscalendrier
+    defaults: { _controller: PlanningBundle:Default:consultationStagiaireSansCalendrier }
+
+creation_planning:
+    path:     /planning/add
+    defaults: { _controller: PlanningBundle:Default:addPlanning }
+
+modification_planning:
+    path:     /planning/update
+    defaults: { _controller: PlanningBundle:Default:updatePlanning }
+
+comparaison_planning:
+    path:     /planning/comparaison
+    defaults: { _controller: PlanningBundle:Default:comparaisonPlanning }
+
+consultation_modele_planning:
+    path:     /modele
+    defaults: { _controller: PlanningBundle:Default:modele }
+
+creation_modele_planning:
+    path:     /modele/add
+    defaults: { _controller: PlanningBundle:Default:addModele }
+
+# UserBundle
+
 
 
 
