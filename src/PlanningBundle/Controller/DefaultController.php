@@ -16,11 +16,27 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/indexResultat")
+     */
+    public function indexResultatAction()
+    {
+        return $this->render('PlanningBundle:Default:indexResultat.html.twig');
+    }
+
+    /**
      * @Route("/consultant")
      */
     public function indexConsultantAction()
     {
         return $this->render('PlanningBundle:Default:indexConsultant.html.twig');
+    }
+
+    /**
+     * @Route("/consultant/resultat")
+     */
+    public function indexConsultantResultatAction()
+    {
+        return $this->render('PlanningBundle:Default:indexConsultantResultat.html.twig');
     }
 
     /**
