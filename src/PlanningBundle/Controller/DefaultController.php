@@ -78,4 +78,12 @@ class DefaultController extends Controller
     {
         return $this->render('PlanningBundle:Default:CreationModelePlanning.html.twig');
     }
+
+    /**
+     * @Route("/modele/update")
+     */
+    public function updateModeleAction()
+    {
+        return $this->render('PlanningBundle:Default:ModificationModelePlanning.html.twig');
+    }
 }

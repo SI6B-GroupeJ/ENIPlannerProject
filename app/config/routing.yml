@@ -54,6 +54,10 @@ creation_module_independant:
     path:     /moduleIndependant/add
     defaults: { _controller: GestionModuleBundle:Default:addModuleIndependant }
 
+modification_module_independant:
+    path:     /moduleIndependant/update
+    defaults: { _controller: GestionModuleBundle:Default:updateModuleIndependant }
+
 consultation_enchainement_module:
     path:     /enchainementModule
     defaults: { _controller: GestionModuleBundle:Default:enchainementModule }
@@ -66,6 +70,10 @@ creation_enchainement_module:
 historisation:
     path:     /historisation
     defaults: { _controller: OutilsBundle:Default:historisation }
+
+purge:
+    path:     /purge
+    defaults: { _controller: OutilsBundle:Default:purge }
 
 # PlanningBundle
 accueil:
@@ -104,8 +112,14 @@ creation_modele_planning:
     path:     /modele/add
     defaults: { _controller: PlanningBundle:Default:addModele }
 
-# UserBundle
+modification_modele_planning:
+    path:     /modele/update
+    defaults: { _controller: PlanningBundle:Default:updateModele }
 
+# UserBundle
+profil:
+    path:     /profil
+    defaults: { _controller: UserBundle:Default:profil }
 
 
 

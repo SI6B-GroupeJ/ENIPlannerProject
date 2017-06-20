@@ -8,10 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/profil")
      */
-    public function indexAction()
+    public function profilAction()
     {
-        return $this->render('UserBundle:Default:index.html.twig');
+        return $this->render('UserBundle:Default:profil.html.twig');
     }
 }

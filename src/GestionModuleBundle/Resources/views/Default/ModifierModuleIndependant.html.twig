@@ -1,12 +1,12 @@
 {% extends 'menuAdmin.html.twig' %}
-
+      
 {% block body %}
 <!-- DEBUT PAGE -->       
       <section id="main-content">
           <section class="wrapper">            
                 <div class="col-lg-12">
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-laptop"></i>Création enchaînement module</li>                          
+                        <li><i class="fa fa-laptop"></i>Modification d'un module Indépendant</li>                          
                     </ol>
                 </div>
                 <div><br/></div>
@@ -24,26 +24,42 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-12 col-xs-12">Libelle</label>
                         <div class="col-md-9 col-sm-12 col-xs-12">
-                          <select class="form-control" id="exampleSelect1">
-                            <option>JavaEE partie 1</option>
-                            <option>JavaEE partie 2</option>
-                            <option>Base Java</option>
-                            <option>PHP</option>
-                            <option>Administration Tomcat</option>
-                          </select>
+                          <input type="text" class="form-control" value="AngularJS">
+                        </div>
+                      </div>
+                      <!--//////   Duree en heures   //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Durée en heures</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="60">
                         </div>
                       </div>
                       <!--//////   Durée en semaine   //////////-->
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-12 col-xs-12" for="exampleSelect1">Dépendence</label>
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12" for="exampleSelect1">Durée en semaine</label>
                         <div class="col-md-9 col-sm-12 col-xs-12">
                           <select class="form-control" id="exampleSelect1">
-                            <option>JavaEE partie 1</option>
-                            <option>JavaEE partie 2</option>
-                            <option>Base Java</option>
-                            <option>PHP</option>
-                            <option>Administration Tomcat</option>
+                            <option>2</option>
+                            <option>1</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
                           </select>
+                        </div>
+                      </div>
+                      
+                      <!--///////////// Libelle court //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Libelle court</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value=" AnguJS">
+                        </div>
+                      </div>
+                      <!--///////////// Detail //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12" for="exampleTextarea">Détail</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                            <textarea class="form-control" id="exampleTextarea" rows="3" value=" Cours avancé sur le javaScript"></textarea>
                         </div>
                       </div>
 
@@ -51,7 +67,7 @@
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                          <a class="btn btn-success" href="{{ path('consultation_enchainement_module') }}">Valider</a>
+                          <a class="btn btn-success" href="{{ path('consultation_module_independant') }}">Modifier</a>
                         </div>
                       </div>
                     </form>

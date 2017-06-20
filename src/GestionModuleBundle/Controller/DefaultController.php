@@ -24,6 +24,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/moduleIndependant/update")
+     */
+    public function updateModuleIndependantAction()
+    {
+        return $this->render('GestionModuleBundle:Default:ModifierModuleIndependant.html.twig');
+    }
+
+    /**
      * @Route("/enchainementModule")
      */
     public function enchainementModuleAction()

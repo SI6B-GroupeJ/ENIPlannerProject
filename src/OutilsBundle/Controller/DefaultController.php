@@ -14,4 +14,12 @@ class DefaultController extends Controller
     {
         return $this->render('OutilsBundle:Default:Historisation.html.twig');
     }
+
+    /**
+     * @Route("/purge")
+     */
+    public function purgeAction()
+    {
+        return $this->render('OutilsBundle:Default:Purge.html.twig');
+    }
 }

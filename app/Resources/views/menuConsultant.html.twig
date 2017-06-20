@@ -12,6 +12,7 @@
         <link href="/ENIPlannerProject/web/css/style.css" rel="stylesheet"/>
         <link href="/ENIPlannerProject/web/css/style-responsive.css" rel="stylesheet" />
         <link href="/ENIPlannerProject/web/css/jquery-ui-1.10.4.min.css" rel="stylesheet"/>
+        <link href="/ENIPlannerProject/web/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
         <link href="/ENIPlannerProject/web/css/stylePerso.css" rel="stylesheet"/>
 
@@ -59,13 +60,13 @@
                             <ul class="dropdown-menu extended logout">
                                 <div class="log-arrow-up"></div>
                                 <li>
-                                    <a href="profil.html">PROFIL</a>
+                                    <a href="{{ path('profil') }}">PROFIL</a>
                                 </li>
                                 <li>
                                     <a href="#">DOCUMENTATION</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Deconnexion</a>
+                                    <a href="#">Deconnexion</a>
                                 </li>
                             </ul>
                         </li>
@@ -81,7 +82,7 @@
                     <!-- sidebar menu start-->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a class="" href="indexConsultant.html">
+                            <a class="" href="{{ path('accueil') }}">
                                 <i class="icon_house_alt"></i>
                                 <span>Accueil</span>
                             </a>
@@ -102,5 +103,13 @@
         <script src="/ENIPlannerProject/web/js/jquery.nicescroll.js" type="text/javascript"></script><!--/////////////NE PAS SUPPRIMER IMPORTANT POUR LE MENU/////////////-->
         <script src="/ENIPlannerProject/web/js/jquery.customSelect.min.js" ></script>
         <script src="/ENIPlannerProject/web/js/scripts.js"></script>
+        <script src="/ENIPlannerProject/web/js/bootstrap-year-calendar.min.js"></script>
+
+        <!-- datetimepicker -->
+        <script src="/ENIPlannerProject/web/js/moment.js"></script>
+        <script src="/ENIPlannerProject/web/js/fr.js"></script>
+        <script src="/ENIPlannerProject/web/js/bootstrap-datetimepicker.min.js"></script>
+
+        {% block js %}{% endblock %}
     </body>
 </html>
