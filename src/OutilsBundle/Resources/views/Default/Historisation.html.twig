@@ -45,21 +45,13 @@
                                  <th>Acteur</th>
                                  <th>Détail</th>
                               </tr>
+                              {% for historisation in liste_historisation %}
                               <tr>
-                                 <td>20/01/2016 12:03:56</td>
-                                 <td>Mr Stéphane OLLIVIER</td>
-                                 <td>Création du planning de Paul SAVEAN</td>
+                                 <td>{{ historisation.dateheuremodif }}</td>
+                                 <td>{{ historisation.auteur }}</td>
+                                 <td>{{ historisation.detail }}</td>
                               </tr>
-                              <tr>
-                                 <td>22/01/2016 22:10:26</td>
-                                 <td>Mr Stéphane OLLIVIER</td>
-                                 <td>Modification du planning de Paul SAVEAN</td>
-                              </tr>
-                              <tr>
-                                 <td>25/02/2016 19:30:16</td>
-                                 <td>Mr Stéphane OLLIVIER</td>
-                                 <td>Création du planning de Matthieu FOLL</td>
-                              </tr>                              
+                              {% endfor %}
                            </tbody>
                         </table>
                   </section>

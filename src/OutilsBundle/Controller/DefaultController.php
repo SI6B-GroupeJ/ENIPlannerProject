@@ -27,21 +27,17 @@ class DefaultController extends Controller
     {
         // On récupère le repository
         $repository = $this->getDoctrine()
-            ->getManager()
+            ->getEntityManager()
             ->getRepository('OutilsBundle:Historisation');
 
-        // On récupère l'entité correspondante à l'id $id
-        $advert = $repository->find($auteur);
-
-        // $advert est donc une instance de OC\PlatformBundle\Entity\Advert
-        // ou null si l'id $id  n'existe pas, d'où ce if :
-        if (null === $advert) {
-            throw new NotFoundHttpException("L'annonce d'id " . $auteur . " n'existe pas.");
+        if ($auteur !== null) {
+            $liste_historisation = $repository->findByAuteur($auteur);
+        } else {
+            $liste_historisation = array();
         }
 
-        // Le render ne change pas, on passait avant un tableau, maintenant un objet
-        return $this->render('OutilsBundle:Advert:view.html.twig', array(
-            'advert' => $advert
+        return $this->render('OutilsBundle:historisation.html.twig', array(
+            'liste_historisation' => $liste_historisation
         ));
     }
 }
