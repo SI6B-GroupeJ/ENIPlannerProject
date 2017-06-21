@@ -19,8 +19,8 @@ class AppKernel extends Kernel
             new PlanningBundle\PlanningBundle(),
             new OutilsBundle\OutilsBundle(),
             new GestionModuleBundle\GestionModuleBundle(),
-            new GestionERPBundle\GestionERPBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new GestionERPBundle\GestionERPBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

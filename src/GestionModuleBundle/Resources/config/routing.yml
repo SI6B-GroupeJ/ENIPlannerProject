@@ -1,0 +1,20 @@
+# GestionModuleBundle
+consultation_module_independant:
+    path:     /moduleIndependant
+    defaults: { _controller: GestionModuleBundle:Default:moduleIndependant }
+
+creation_module_independant:
+    path:     /moduleIndependant/add
+    defaults: { _controller: GestionModuleBundle:Default:addModuleIndependant }
+
+modification_module_independant:
+    path:     /moduleIndependant/update
+    defaults: { _controller: GestionModuleBundle:Default:updateModuleIndependant }
+
+consultation_enchainement_module:
+    path:     /enchainementModule
+    defaults: { _controller: GestionModuleBundle:Default:enchainementModule }
+
+creation_enchainement_module:
+    path:     /enchainementModule/add
+    defaults: { _controller: GestionModuleBundle:Default:addEnchainementModule }

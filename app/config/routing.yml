@@ -27,44 +27,6 @@ user:
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
-fos_user_profile:
-    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-    prefix: /profile
-
-fos_user_register:
-    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
-
-fos_user_resetting:
-    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-    prefix: /resetting
-
-fos_user_change_password:
-    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /profile
-
-# GestionERPBundle
-
-# GestionModuleBundle
-consultation_module_independant:
-    path:     /moduleIndependant
-    defaults: { _controller: GestionModuleBundle:Default:moduleIndependant }
-
-creation_module_independant:
-    path:     /moduleIndependant/add
-    defaults: { _controller: GestionModuleBundle:Default:addModuleIndependant }
-
-modification_module_independant:
-    path:     /moduleIndependant/update
-    defaults: { _controller: GestionModuleBundle:Default:updateModuleIndependant }
-
-consultation_enchainement_module:
-    path:     /enchainementModule
-    defaults: { _controller: GestionModuleBundle:Default:enchainementModule }
-
-creation_enchainement_module:
-    path:     /enchainementModule/add
-    defaults: { _controller: GestionModuleBundle:Default:addEnchainementModule }
 
 # OutilsBundle
 historisation:
@@ -78,7 +40,7 @@ purge:
 # PlanningBundle
 accueil:
     path:     /
-    defaults: { _controller: PlanningBundle:Default:index }
+    defaults: { _controller: PlanningBundle:AdministrateurAccueil:index }
 
 accueil_resultat:
     path:     /indexResultat
@@ -132,7 +94,3 @@ modification_modele_planning:
 profil:
     path:     /profil
     defaults: { _controller: UserBundle:Default:profil }
-
-
-
-
