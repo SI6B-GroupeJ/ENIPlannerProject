@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/moduleIndependant")
+     * @Route("/moduleIndependant", name="consultation_module_independant")
      */
     public function moduleIndependantAction()
     {
@@ -16,7 +16,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/moduleIndependant/add")
+     * @Route("/moduleIndependant/add", name="creation_module_independant")
      */
     public function addModuleIndependantAction()
     {
@@ -24,7 +24,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/moduleIndependant/update")
+     * @Route("/moduleIndependant/update", name="modification_module_independant")
      */
     public function updateModuleIndependantAction()
     {
@@ -32,7 +32,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/enchainementModule")
+     * @Route("/enchainementModule", name="consultation_enchainement_module")
      */
     public function enchainementModuleAction()
     {
@@ -40,7 +40,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/enchainementModule/add")
+     * @Route("/enchainementModule/add", name="creation_enchainement_module")
      */
     public function addEnchainementModuleAction()
     {

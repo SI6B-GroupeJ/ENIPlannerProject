@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/profil")
+     * @Route("/profil", name="profil")
      */
     public function profilAction()
     {

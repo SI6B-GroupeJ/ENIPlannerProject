@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="accueil")
      */
     public function indexAction()
     {
@@ -16,7 +16,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/indexResultat")
+     * @Route("/indexResultat", name="accueil_resultat")
      */
     public function indexResultatAction()
     {
@@ -24,7 +24,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/consultant")
+     * @Route("/consultant", name="accueil_consultant")
      */
     public function indexConsultantAction()
     {
@@ -32,7 +32,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/consultant/resultat")
+     * @Route("/consultant/resultat", name="accueil_consultant_resultat")
      */
     public function indexConsultantResultatAction()
     {
@@ -40,7 +40,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/stagiaire/consultation")
+     * @Route("/stagiaire/consultation", name="consultation_stagiaire")
      */
     public function consultationStagiaireAction()
     {
@@ -48,7 +48,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/stagiaire/consultation/consultant")
+     * @Route("/stagiaire/consultation/consultant", name="consultation_stagiaire_consultant")
      */
     public function consultationStagiaireConsultantAction()
     {
@@ -56,7 +56,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/stagiaire/consultation/sanscalendrier")
+     * @Route("/stagiaire/consultation/sanscalendrier", name="consultation_stagiaire_sanscalendrier")
      */
     public function consultationStagiaireSansCalendrierAction()
     {
@@ -64,7 +64,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/planning/add")
+     * @Route("/planning/add", name="creation_planning")
      */
     public function addPlanningAction()
     {
@@ -72,7 +72,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/planning/update")
+     * @Route("/planning/update", name="modification_planning")
      */
     public function updatePlanningAction()
     {
@@ -80,7 +80,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/planning/comparaison")
+     * @Route("/planning/comparaison", name="comparaison_planning")
      */
     public function comparaisonPlanningAction()
     {
@@ -88,7 +88,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/modele")
+     * @Route("/modele", name="consultation_modele_planning")
      */
     public function modeleAction()
     {
@@ -96,7 +96,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/modele/add")
+     * @Route("/modele/add", name="creation_modele_planning")
      */
     public function addModeleAction()
     {
@@ -104,7 +104,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/modele/update")
+     * @Route("/modele/update", name="modification_modele_planning")
      */
     public function updateModeleAction()
     {
