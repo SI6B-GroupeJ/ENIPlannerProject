@@ -47,8 +47,8 @@
                               </tr>
                               {% for historisation in liste_historisation %}
                               <tr>
-                                 <td>{{ historisation.dateheuremodif }}</td>
-                                 <td>{{ historisation.auteur }}</td>
+                                 <td>{{ historisation.dateheuremodif|date('d/m/Y') }}</td>
+                                 <td>azerty</td>
                                  <td>{{ historisation.detail }}</td>
                               </tr>
                               {% endfor %}
@@ -62,19 +62,23 @@
 {% block js %}
 	<script type="text/javascript">
 	$(function () {
+        var dateDebut = new Date();
+        dateDebut.setDate( dateDebut.getDate() - 2);
 		$('#form_date_debut').datetimepicker({
 			format: 'DD MMMM YYYY',
 			widgetPositioning: {
 				horizontal: 'right' 
 			},
-			showTodayButton: true
+			showTodayButton: true,
+            defaultDate: dateDebut
 		});
 		$('#form_date_fin').datetimepicker({
 			format: 'DD MMMM YYYY',
 			widgetPositioning: {
 				horizontal: 'right' 
 			},
-			showTodayButton: true
+			showTodayButton: true,
+            defaultDate: new Date()
 		});
     });
     </script>
