@@ -11,5 +11,8 @@ use Doctrine\ORM\EntityRepository;
 
 class StagiaireRepository extends EntityRepository
 {
+    public function rechercheStagiaireEntreprise($nomStagiaire, $prenomStagiaire, $entreprise)
+    {
 
+    }
 }
