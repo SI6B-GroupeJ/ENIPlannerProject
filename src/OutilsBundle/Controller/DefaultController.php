@@ -2,8 +2,11 @@
 
 namespace OutilsBundle\Controller;
 
+use Doctrine\ORM\Mapping\Entity;
+use OutilsBundle\Entity\Historisation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class DefaultController extends Controller
 {
@@ -12,7 +15,19 @@ class DefaultController extends Controller
      */
     public function historisationAction()
     {
-        return $this->render('OutilsBundle:Default:Historisation.html.twig');
+        // On récupère le repository
+        $repository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('OutilsBundle:Historisation');
+
+        $dateDebut = date_create('01-08-2016 10:00:00');
+        $dateFin = date_create('10-09-2016 10:00:00');
+
+        $liste_historisation = $repository->findByDateHeureModif($dateDebut, $dateFin);
+
+        return $this->render('OutilsBundle:Default:Historisation.html.twig', array(
+            'liste_historisation' => $liste_historisation
+        ));
     }
 
     /**
@@ -23,25 +38,21 @@ class DefaultController extends Controller
         return $this->render('OutilsBundle:Default:Purge.html.twig');
     }
 
-    public function searchHistorisationAction($auteur)
+    public function searchHistorisationAction()
     {
         // On récupère le repository
         $repository = $this->getDoctrine()
-            ->getManager()
+            ->getEntityManager()
             ->getRepository('OutilsBundle:Historisation');
 
-        // On récupère l'entité correspondante à l'id $id
-        $advert = $repository->find($auteur);
+        //if ($auteur !== null) {
+          //  $liste_historisation = $repository->findAll();
+        //} else {
+            $liste_historisation = array();
+        //}
 
-        // $advert est donc une instance de OC\PlatformBundle\Entity\Advert
-        // ou null si l'id $id  n'existe pas, d'où ce if :
-        if (null === $advert) {
-            throw new NotFoundHttpException("L'annonce d'id " . $auteur . " n'existe pas.");
-        }
-
-        // Le render ne change pas, on passait avant un tableau, maintenant un objet
-        return $this->render('OutilsBundle:Advert:view.html.twig', array(
-            'advert' => $advert
+        return $this->render('OutilsBundle:Default:Historisation.html.twig', array(
+            'liste_historisation' => $liste_historisation
         ));
     }
 }

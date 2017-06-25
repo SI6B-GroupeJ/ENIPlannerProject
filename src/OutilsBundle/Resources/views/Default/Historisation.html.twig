@@ -45,21 +45,13 @@
                                  <th>Acteur</th>
                                  <th>Détail</th>
                               </tr>
+                              {% for historisation in liste_historisation %}
                               <tr>
-                                 <td>20/01/2016 12:03:56</td>
-                                 <td>Mr Stéphane OLLIVIER</td>
-                                 <td>Création du planning de Paul SAVEAN</td>
+                                 <td>{{ historisation.dateheuremodif|date('d/m/Y') }}</td>
+                                 <td>azerty</td>
+                                 <td>{{ historisation.detail }}</td>
                               </tr>
-                              <tr>
-                                 <td>22/01/2016 22:10:26</td>
-                                 <td>Mr Stéphane OLLIVIER</td>
-                                 <td>Modification du planning de Paul SAVEAN</td>
-                              </tr>
-                              <tr>
-                                 <td>25/02/2016 19:30:16</td>
-                                 <td>Mr Stéphane OLLIVIER</td>
-                                 <td>Création du planning de Matthieu FOLL</td>
-                              </tr>                              
+                              {% endfor %}
                            </tbody>
                         </table>
                   </section>
@@ -70,19 +62,23 @@
 {% block js %}
 	<script type="text/javascript">
 	$(function () {
+        var dateDebut = new Date();
+        dateDebut.setDate( dateDebut.getDate() - 2);
 		$('#form_date_debut').datetimepicker({
 			format: 'DD MMMM YYYY',
 			widgetPositioning: {
 				horizontal: 'right' 
 			},
-			showTodayButton: true
+			showTodayButton: true,
+            defaultDate: dateDebut
 		});
 		$('#form_date_fin').datetimepicker({
 			format: 'DD MMMM YYYY',
 			widgetPositioning: {
 				horizontal: 'right' 
 			},
-			showTodayButton: true
+			showTodayButton: true,
+            defaultDate: new Date()
 		});
     });
     </script>
