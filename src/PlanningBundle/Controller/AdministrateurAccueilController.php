@@ -4,23 +4,51 @@ namespace PlanningBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class AdministrateurAccueilController extends Controller
 {
+<<<<<<< HEAD
+        /**
+     * @Route("/", name="home")
+=======
     /**
      * @Route("/", name="accueil")
+>>>>>>> origin/developpement
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-        $stagiaires = $em->getRepository('GestionERPBundle:Stagiaire')->findAll();
+        $em = $this->getDoctrine()->getManager('erp');
+        if($request->getMethod() == 'POST') {
+            $nomStagiaire = $_POST['Nom'];
+            $prenomStagiaire = $_POST['Prenom'];
+            $entreprise = $_POST['Entreprise'];
 
-        var_dump($stagiaires);
-        return $this->render('PlanningBundle:Default:index.html.twig');
+        }
+
+        $em = $this->getDoctrine()->getManager('erp');
+        $lieux = $em->getRepository('GestionERPBundle:Lieu')->findAll();
+        $formations = $em->getRepository('GestionERPBundle:Formation')->findAll();
+
+        return $this->render('PlanningBundle:Default:index.html.twig',
+            array('lieux'=>$lieux,
+                'formations'=>$formations));
     }
 
     /**
+     * @Route("/", name="rechercheStagiaireEntreprise")
+     */
+    public function RechercheStagiaireEntrepriseAction(Request $request)
+    {
+
+    }
+
+    /**
+<<<<<<< HEAD
+     * @Route("/indexResultat", name="indexResultat")
+=======
      * @Route("/indexResultat", name="accueil_resultat")
+>>>>>>> origin/developpement
      */
     public function indexResultatAction()
     {
