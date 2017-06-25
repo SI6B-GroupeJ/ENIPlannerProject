@@ -1,0 +1,905 @@
+{% extends 'menuAdmin.html.twig' %}
+
+{% block body %}
+<!--//////////  MENU   //////////-->
+      <section id="main-content">
+          <section class="wrapper">            
+<div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li><i class="fa fa-laptop"></i>Création d'un planning pour un stagiaire</li>                          
+                    </ol>
+                </div>
+            </div>
+<div ><br/></div>
+
+<!--////////// DEBUT PAGE //////////-->
+<div class="container">
+<div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+            <p>Information générale</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+            <p>Elaboration du planning</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+            <p>Finalisation</p>
+        </div>
+    </div>
+</div>
+<form role="form">
+    <div class="row setup-content" id="step-1">
+		<br/>
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label">Nom</label>
+                    <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Entrer le nom" value="QUINTON" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Prenom</label>
+                    <input maxlength="100" type="text" required="required" class="form-control" placeholder="Entrer le prénom" value="Annaig" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Entreprise</label>
+                    <input maxlength="100" type="text" required="required" class="form-control" placeholder="Entrer l'entreprise" value="KEOLIS RENNES (STAR)"/>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label">Date Début contrat</label>
+                    <div>
+                        <div class="input-group date" id='form_date_debut_contrat'>
+                            <input class="form-control" type="text">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label">Date Fin contrat</label>
+                    <div>
+                        <div class="input-group date" id='form_date_fin_contrat'>
+                            <input class="form-control" type="text">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="control-label">Date Début formation</label>
+                    <div>
+                        <div class="input-group date" id='form_date_debut_formation'>
+                            <input class="form-control" type="text">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label">Date Fin formation</label>
+                    <div>
+                        <div class="input-group date" id='form_date_fin_formation'>
+                            <input class="form-control" type="text">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label class="control-label" for="exampleSelect1">Formation</label>
+                          <select class="form-control" id="exampleSelect1">
+                            <option>DL</option>
+                            <option>TSRI</option>
+                            <option>T2SI</option>
+                            <option selected>CDI</option>
+                            <option>ASR</option>
+                            <option>MS2I-SI</option>
+                            <option>MS2I-INF</option>
+                          </select>
+                        </div>
+                      </div>
+                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Suivant</button>
+            </div>
+        </div>
+</form>
+
+
+
+    <!--//////// STEP 2 ////////-->
+<div class="row setup-content" id="step-2">
+	<br/>
+  <section class="panel">
+      <div class="col-md-9">
+        <div id="calendar"></div>
+      </div>
+
+        <!--/////////FORMULAIRE///////////-->
+
+        <div class="col-md-3">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Liste des alertes
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                          <form class="form-horizontal" role="form">
+                          
+                            <table class="table table-striped table-advance table-hover">
+                                   <tbody>
+                                      <tr>
+                                         <th>Libelle</th>
+                                         <th>Action</th>
+                                      </tr>
+                                      <tr>
+                                         <td>Programmation C# .Net partie 2 avant Programmation C# .Net partie 1</td>
+                                         <td>
+                                          <div class="btn-group">
+                                              <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                          </div>
+                                          </td>
+                                      </tr>                        
+                                   </tbody>
+                              </table>
+                              <button class="btn btn-primary pull-right" type="submit" >Réinitialiser</button>
+                            </form>
+                            </div>
+                      </section>            
+              </div>
+        </section>
+
+          <div class="col-xs-12">
+                          <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th>Libelle</th>
+                                 <th>Date de Début</th>
+                                 <th>Date de Fin</th>
+                                 <th>Duree Heures</th>
+                                 <th>Lieu</th>
+                                 <th>Nombre stagiaires</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>Rappels sur la programmation object</td>
+                                 <td>06/10/2014</td>
+                                 <td>10/10/2014</td>
+                                 <td>35</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" data-toggle="modal" data-target="#myModalModifDate"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              </tr>
+                              <tr>
+                                 <td>Le langage de requête SQL</td>
+                                 <td>13/10/2014</td>
+                                 <td>17/10/2014</td>
+                                 <td>35</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                               <tr>
+                                 <td>Procédures stockées avec PL-SQL</td>
+                                 <td>17/11/2014</td>
+                                 <td>21/11/2014</td>
+                                 <td>35</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                 <td>Programmation C# .Net partie 1</td>
+                                 <td>23/02/2015</td>
+                                 <td>06/03/2015</td>
+                                 <td>70</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>        
+							  <tr>
+                                 <td>Programmation C# .Net partie 2</td>
+                                 <td>05/01/2015</td>
+                                 <td>16/01/2015</td>
+                                 <td>70</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>        							  
+                              </tbody>
+                        </table>
+                        <div class="btn-group">
+                          <button class="btn btn-primary" data-toggle="modal" data-target="#myModalRecherche">Rechercher Module</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModalRechercheCalendrier">Importer calendrier</button>
+                        </div> 
+                        <div class="btn-group">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModalCompare">Comparer</button>
+                        </div> 
+						<div class="btn-group">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModalEnregistrerModele">Enregistrer en tant que modèle</button>
+                        </div> 
+                       <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Suivant</button>
+                </div>
+</div>
+                
+
+<!--//////// FIN STEP 2 //////////-->
+
+    <!--//////// STEP 3 //////////-->
+    <div class="row setup-content" id="step-3">
+		<br/>
+      <div class="col-xs-12">
+            <div class="col-md-12">
+                <div style="text-align: center">
+                  <img src="../../img/planning_AQN.png">
+                </div>
+                <div class="btn-group">
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#myModalTelecharger">Télécharger</button>
+                </div>      
+                <a class="btn btn-success btn-lg pull-right" href="{{ path('accueil') }}">Envoyer</a>
+            </div>
+      </div>
+    </div>
+          </section>
+      </section>
+
+
+<!--/////////// FIN PAGE //////////-->
+ 
+<!--//////// DEBUT MODAL RECHERCHE //////////-->
+<div id="myModalRecherche" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Rechercher un module</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Recherche de module
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-2 control-label">Libelle</label>
+                                      <div class="col-md-10">
+                                          <input type="libelle" class="form-control" id="inputLibelle" placeholder="Libelle">
+                                      </div>
+                                  </div>
+                                  <!--///// Duree en heure //////-->
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-2 control-label">Lieu</label>
+                                      <div class="col-md-10">
+                                          <select class="form-control" id="exampleSelect1">
+                                                <option>Nantes</option>
+                                                <option selected>Rennes</option>
+                                                <option>Niort</option>
+                                          </select> 
+
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-2 control-label">Type formation</label>
+                                      <div class="col-md-10">
+                                          <select class="form-control" id="exampleSelect2">
+                                                <option>DL</option>
+                                                <option>TSRI</option>
+                                                <option>T2SI</option>
+                                                <option selected>CDI</option>
+                                                <option>ASR</option>
+                                                <option>MS2I-SI</option>
+                                                <option>MS2I-INF</option>
+                                            </select> 
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-2 control-label">Date Début</label>
+                                      <div class="col-md-10">
+                    										<div class="input-group date" id='form_date_debut_recherche'>
+                    											<input class="form-control" type="text">
+                    											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    										</div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-2 control-label">Date Fin</label>
+                                      <div class="col-md-10">
+                                          <div class="input-group date" id='form_date_fin_recherche'>
+                      											<input class="form-control" type="text">
+                      											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                      										</div>   
+                                      </div>
+                                  </div>
+                                  <button class="btn btn-primary pull-right" type="submit" >Rechercher</button>
+
+                            <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                            </br></br>
+                              <tr>
+                                 <th>Libelle</th>
+                                 <th>Duree /H</th>
+                                 <th>Date Début</th>
+                                 <th>Date Fin</th>
+                                 <th>Nombre stagiaires</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>Rappels sur la programmation objet</td>
+                                 <td>35</td>
+                                 <td>06/10/2014</td>
+                                 <td>13/10/2014</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                 <td>Le langage de requête SQL</td>
+                                 <td>35</td>
+                                 <td>13/10/2014</td>
+                                 <td>17/10/2014</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>                          
+                           </tbody>
+                        </table>
+                      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL //////////-->
+
+
+<!--//////// DEBUT MODAL recherche calendrier //////////-->
+<div id="myModalRechercheCalendrier" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Rechercher calendrier</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Recherche calendrier
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+							<header class="panel-heading">
+                                Recherche calendrier stagiaire
+                              </header>
+							  <br/>
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Nom</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle">
+                                      </div>
+                                  </div>
+                                  <!--///// Duree en heure //////-->
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Prénom</label>
+                                      <div class="col-md-9">
+                                          <input type="dureeH" class="form-control" id="inputDureeH">
+                                      </div>
+                                  </div>
+                                  <button class="btn btn-primary pull-right" type="submit" >Rechercher</button>
+								</form>
+							</div>
+                            <div class="panel-body">
+                              <header class="panel-heading">
+                                Recherche modele calendrier
+                        
+                              </header>
+                            </br>
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Libelle</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle">
+                                      </div>
+                                  </div>
+								  <button class="btn btn-primary pull-right" type="submit" >Rechercher</button>
+                                                              </form>
+								</div>
+                              <div class="panel-body">
+                            <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th>Nom</th>
+                                 <th>Prenom</th>
+                                 <th>Libelle</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>Matthieu</td>
+                                 <td>FOLL</td>
+                                 <td>Null</td>
+                                 <td>
+                                  <div class="btn-group pull-right">
+                                      <a class="btn btn-primary" href="#">Importer</a>
+                                  </div>
+                                  </td>
+                              </tr>                          
+                           </tbody>
+                        </table>
+                      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL recherche calendrier//////////-->
+
+<!--//////// DEBUT MODAL COMPARE //////////-->
+<div id="myModalCompare" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Rechercher stagiaire</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Recherche stagiaire
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Prenom</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle" placeholder="Libelle">
+                                          <div ><br/></div>
+                                      </div>
+                                  </div>
+                                  <!--///// Duree en heure //////-->
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Nom</label>
+                                      <div class="col-md-9">
+                                          <input type="dureeH" class="form-control" id="inputDureeH" placeholder="Duree En Heures">
+                                          <div ><br/></div>
+                                          <button class="btn btn-primary pull-right" type="submit" >Rechercher</button>
+                                      </div>
+
+                                  </div>
+
+                                   <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th>Nom</th>
+                                 <th>Prenom</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>Matthieu</td>
+                                 <td>FOLL</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="{{ path('comparaison_planning') }}">Ouvrir</a>
+                                  </div>
+                                  </td>
+                              </tr>                          
+                           </tbody>
+                        </table>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+                              </form>
+    </div>
+                      </section>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL COMPARE//////////-->
+
+<!--//////// DEBUT MODAL MODIF DATE //////////-->
+<div id="myModalModifDate" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Rechercher un module</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Recherche de module
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Date début</label>
+                                      <div class="col-md-9">
+                                          <div class="input-group date" id='form_date_debut_modif'>
+											<input class="form-control" type="text">
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+                                          <div ></br></div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Date Fin</label>
+                                      <div class="col-md-9">
+                                          <div class="input-group date" id='form_date_fin_modif'>
+											<input class="form-control" type="text">
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+										</div>
+                                          <div ></br></div>
+                                      </div>
+                                  </div>
+
+                                  <!--///// Duree en heure //////-->
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Site</label>
+                                      <div class="col-md-9">
+                                          <input type="dureeH" class="form-control" id="inputDureeH" placeholder="">
+                                          <div ></br></br></div>
+                                      </div>
+                                  </div>
+                            <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th>Nom</th>
+                                 <th>Date Début</th>
+                                 <th>Date Fin</th>
+                                 <th>Site</th>
+                                 <th>Action</th>
+
+                              </tr>
+                              <tr>
+                                 <td>JEE</td>
+                                 <td>15/05/2014</td>
+                                 <td>20/05/2014</td>
+                                 <td>Nantes</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                 <td>JEE</td>
+                                 <td>15/07/2014</td>
+                                 <td>20/07/2014</td>
+                                 <td>Nantes</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>                              
+                           </tbody>
+                        </table>
+                      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL MODIF DATE//////////-->
+
+<!--//////// DEBUT MODAL TELECHARGER //////////-->
+<div id="myModalTelecharger" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Télécharger le planning</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Télécharger le planning
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group" style="text-align: center">
+                                      <label class="radio-inline"><input type="radio" name="optradio">PDF</label>
+                                      <label class="radio-inline"><input type="radio" name="optradio">RTF</label>
+                                      <label class="radio-inline"><input type="radio" name="optradio" checked>Les deux</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-8">
+                                          <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                         <div class="btn-group">
+                                            <a class="btn btn-primary" href="#">Parcourir</a>
+                                          </div> 
+                                    </div>
+                
+                                  </form>
+                              </div>
+
+                      </section>
+            </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Télécharger</button>
+      </div>
+    
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL //////////-->
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+	
+	
+	function hidePopover(elt) {
+	// Hiding the popover only if the mouse is not on the day AND not on the popover.
+	if(!elt.data('mouse-on-day') && !elt.data('mouse-on-popover')) {
+		elt.popover('hide');
+	}
+	}
+	
+	var currentYear = new Date().getFullYear();
+	
+	$('#calendar').calendar({ 
+    language: 'fr',
+    startYear: 2014,
+    style: 'background',
+    enableContextMenu: true,
+    enableRangeSelection: true,
+    disabledWeekDays: [0, 6],
+    mouseOnDay: function(e) {
+      if(e.events.length > 0) {
+        $(e.element).data('mouse-on-day', true);
+      
+        var content = '';
+        
+        for(var i in e.events) {
+          content += '<div class="event-tooltip-content">'
+                  + '<div class="event-name" style="color:' + e.events[i].color + '">' + e.events[i].name + '</div>'
+                + '</div>';
+        }
+      
+        // Initialize the popover
+        var popover = $(e.element).popover({ 
+          trigger: 'manual',
+          container: 'body',
+          html:true,
+          content: content,
+          placement: 'bottom'
+        });
+        
+        // Get the popover DOM element
+        var popover =  $(e.element).data('bs.popover').tip();
+        
+        var alreadyVisible = false;
+        
+        // Hide all the old popover visible (only for the case of switching of two adjacent popover).
+        $('div.popover:visible').each(function() {
+          if($(this).get(0) == popover.get(0)) {
+            alreadyVisible = true;
+          }
+          else {
+            // If the popover is not the current one, hide it.
+            $(this).hide();
+          }
+        });
+        
+        if(!alreadyVisible) {
+          $(popover).mouseenter(function () {
+            $(e.element).data('mouse-on-popover', true);
+          })
+          
+          $(popover).mouseleave(function () {
+            $(e.element).data('mouse-on-popover', false);
+            
+            setTimeout(hidePopover, 50, $(e.element));
+          })
+        
+          $(e.element).popover('show');
+        }
+      }
+    },
+    mouseOutDay: function(e) {
+      if(e.events.length > 0) {
+        $(e.element).data('mouse-on-day', false);
+          
+        setTimeout(hidePopover, 50, $(e.element));
+      }
+    },
+    dayContextMenu: function(e) {
+      $(e.element).popover('hide');
+    },
+    dataSource: [
+      {
+        id: 0,
+        name: 'Rappels sur la programmation objet',
+        startDate: new Date(2014, 9, 6),
+        endDate: new Date(2014, 9, 10),
+        color: '#87CEFA'
+      },
+      {
+        id: 1,
+        name: 'Le langage de requête SQL',
+        startDate: new Date(2014, 9, 13),
+        endDate: new Date(2014, 9, 17),
+        color: '#87CEFA'
+      },
+      {
+        id: 2,
+        name: 'Procédures stockées avec PL-SQL',
+        startDate: new Date(2014, 10, 17),
+        endDate: new Date(2014, 10, 21),
+        color: '#87CEFA'
+      },
+      {
+        id: 3,
+        name: 'Programmation C# .Net partie 1',
+        startDate: new Date(2015, 0, 5),
+        endDate: new Date(2015, 0, 16),
+        color: '#87CEFA'
+      },
+	  {
+        id: 4,
+        name: "Tests d'application",
+        startDate: new Date(2016, 3, 18),
+        endDate: new Date(2016, 3, 22),
+        color: '#87CEFA'
+      },
+    ]
+  });
+	
+    $('#form_date_debut_contrat').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true,
+	  date: new Date(2014, 9, 6)
+    });
+    $('#form_date_fin_contrat').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true,
+	  date: new Date(2016, 7, 11)
+    });
+	 $('#form_date_debut_formation').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true,
+	  date: new Date(2014, 9, 6)
+    });
+    $('#form_date_fin_formation').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true,
+	  date: new Date(2016, 7, 11)
+    });
+	
+	$('#form_date_debut_recherche').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true,
+	  date: new Date(2014, 9, 1)
+    });
+    $('#form_date_fin_recherche').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true,
+	  date: new Date(2014, 9, 31)
+    });
+	
+	$('#form_date_debut_modif').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true
+    });
+    $('#form_date_fin_modif').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true
+    });
+	
+});
+</script>
+{% endblock %}

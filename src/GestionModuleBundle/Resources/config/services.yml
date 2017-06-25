@@ -1,0 +1,4 @@
+services:
+#    gestion_module.example:
+#        class: GestionModuleBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

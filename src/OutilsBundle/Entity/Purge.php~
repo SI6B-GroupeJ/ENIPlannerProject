@@ -1,0 +1,43 @@
+<?php
+
+namespace OutilsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Purge
+ *
+ * @ORM\Table(name="Purge", indexes={@ORM\Index(name="IDX_E2C1BCF128B0F9AB", columns={"IdCalendrier"})})
+ * @ORM\Entity
+ */
+class Purge
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="IdPurge", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idpurge;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateDePurge", type="datetime", nullable=false)
+     */
+    private $datedepurge;
+
+    /**
+     * @var \Calendrier
+     *
+     * @ORM\ManyToOne(targetEntity="Calendrier")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="IdCalendrier", referencedColumnName="IdCalendrier")
+     * })
+     */
+    private $idcalendrier;
+
+
+}
+

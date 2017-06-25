@@ -1,0 +1,190 @@
+{% extends 'menuAdmin.html.twig' %}
+
+{% block body %}
+<!--///////////// CONTENU PAGE /////////////-->  
+      <section id="main-content">
+          <section class="wrapper">            
+
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li><i class="fa fa-laptop"></i>Consultation d'un stagiaire</li>                          
+                    </ol>
+                </div>
+
+				<div class="col-xs-6">
+                <div class="x_panel">
+                  <div class="x_content">
+                    <form class="form-horizontal form-label-left">
+                      <!--//////   NOM   //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Nom</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="FOLL">
+                        </div>
+                      </div>
+                      <!--//////   Prenom   //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Prénom</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="Matthieu">
+                        </div>
+                      </div>
+                      <!--//////   Entrprise   //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Entreprise</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="Atos">
+                        </div>
+                      </div>
+                      
+                      <!--///////////// DATE DEBUT //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Date Début contrat</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="15/09/2014">
+                        </div>
+                      </div>
+                      <!--///////////// DATE FIN //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Date Fin contrat</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="18/08/2016 ">
+                        </div>
+                      </div>
+					  
+					  <!--///////////// DATE DEBUT //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Date Début formation</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="15/09/2014">
+                        </div>
+                      </div>
+                      <!--///////////// DATE FIN //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Date Fin formation</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="18/08/2016 ">
+                        </div>
+                      </div>
+
+
+                      <!--//////   Nombre d'heure en formation   //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Formation en centre</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="987 heures">
+                        </div>
+                      </div>
+
+                      <!--//////   Titre préparé   //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Préparation au titre</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <input type="text" class="form-control" value="Concepteur Développeur Informatiques">
+                        </div>
+                      </div>
+
+                       <!--//////   Statut   //////////-->
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Statut</label>
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                          <select class="form-control">
+                            <option>Validé</option>
+							<option>Invalidé</option>
+                            <option>En Attente de validation</option>
+                            <option>A Faire</option>
+                          </select>
+                        </div>
+                      </div>
+
+                       <!--///////////// BOUTONS //////////-->
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                          <a class="btn btn-primary" href="{{ path('modification_planning') }}">Modifier Planning</a>
+                          <a class="btn btn-primary" data-toggle="modal" data-target="#myModalTelecharger">Télécharger planning</a>   
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+<!-- ////////////  PDF //////////// -->
+        <div class="col-xs-6">
+            <img src="{{ asset('img/planning.png') }}" alt="" style="">
+        </div>
+          </section>
+  </section>
+
+
+<!--//////// DEBUT MODAL TELECHARGER //////////-->
+<div id="myModalTelecharger" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Télécharger le planning</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Télécharger le planning
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group" style="text-align: center">
+                                      <label class="radio-inline"><input type="radio" name="optradio">PDF</label>
+                                      <label class="radio-inline"><input type="radio" name="optradio">RTF</label>
+                                      <label class="radio-inline"><input type="radio" name="optradio" checked>Les deux</label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-8">
+                                          <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                         <div class="btn-group">
+                                            <a class="btn btn-primary" href="#">Parcourir</a>
+                                          </div> 
+                                    </div>
+                
+                                  </form>
+                              </div>
+
+                      </section>
+            </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Télécharger</button>
+      </div>
+    
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL //////////-->
+
+
+<!--//////// DEBUT MODAL Valider //////////-->
+<div id="myModalValider" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Valider le calendrier</h4>
+        </div>
+      <div class="modal-body">
+  
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                            <p>Voulez-vous valider ce calendrier ? </p>
+                          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL //////////-->
+{% endblock %}

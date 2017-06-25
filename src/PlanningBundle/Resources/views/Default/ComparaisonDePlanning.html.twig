@@ -1,0 +1,286 @@
+{% extends 'menuAdmin.html.twig' %}
+
+{% block body %}
+<!--//////////  MENU   //////////-->
+      <section id="main-content">
+          <section class="wrapper">            
+<div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li><i class="fa fa-laptop"></i>Comparaison de Plannings</li>                          
+                    </ol>
+                </div>
+            </div>
+
+<!--////////// DEBUT PAGE //////////-->
+
+<!--//////CALENDAR///////-->
+<section class="panel">
+<div class="col-md-9">
+    <div id="calendar"></div>
+</div>
+<!--/////////
+FORMULAIRE
+///////////-->
+<div class="col-md-3">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Liste des alertes
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                          <form class="form-horizontal" role="form">
+                          
+                            <table class="table table-striped table-advance table-hover">
+                                   <tbody>
+                                      <tr>
+                                         <th>Libelle</th>
+                                         <th>Action</th>
+                                      </tr>
+                                      <tr>
+                                         <td>Programmation C# .Net partie 2 avant Programmation C# .Net partie 1</td>
+                                         <td>
+                                          <div class="btn-group">
+                                              <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                          </div>
+                                          </td>
+                                      </tr>                        
+                                   </tbody>
+                              </table>
+                              <button class="btn btn-primary pull-right" type="submit" >Réinitialiser</button>
+                            </form>
+                            </div>
+                      </section>            
+              </div>
+</section>
+                  
+                   <div class="col-xs-12">
+                          <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th>Libelle</th>
+                                 <th>Date de Début</th>
+                                 <th>Date de Fin</th>
+                                 <th>Duree Heures</th>
+                                 <th>Lieu</th>
+                                 <th>Nombre stagiaires</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>Rappels sur la programmation object</td>
+                                 <td>06/10/2014</td>
+                                 <td>10/10/2014</td>
+                                 <td>35</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" data-toggle="modal" data-target="#myModalModifDate"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              </tr>
+                              <tr>
+                                 <td>Le langage de requête SQL</td>
+                                 <td>13/10/2014</td>
+                                 <td>17/10/2014</td>
+                                 <td>35</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                               <tr>
+                                 <td>Procédures stockées avec PL-SQL</td>
+                                 <td>17/11/2014</td>
+                                 <td>21/11/2014</td>
+                                 <td>35</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                 <td>Programmation C# .Net partie 1</td>
+                                 <td>23/02/2015</td>
+                                 <td>06/03/2015</td>
+                                 <td>70</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>        
+							  <tr>
+                                 <td>Programmation C# .Net partie 2</td>
+                                 <td>05/01/2015</td>
+                                 <td>16/01/2015</td>
+                                 <td>70</td>
+                                 <td>Rennes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>                       
+                              </tbody>
+                        </table>
+                        <a class="btn btn-primary nextBtn btn-lg pull-right" href="CreationPlanningAvecSaisie.html?#step-3">Annuler</a>
+</div>
+<!--/////////// FIN PAGE //////////-->
+          </section>
+      </section>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	
+	var currentYear = new Date().getFullYear();
+	
+	function hidePopover(elt) {
+		// Hiding the popover only if the mouse is not on the day AND not on the popover.
+		if(!elt.data('mouse-on-day') && !elt.data('mouse-on-popover')) {
+			elt.popover('hide');
+		}
+	}
+	
+	$('#calendar').calendar({ 
+		language: 'fr',
+    startYear: 2014,
+		enableContextMenu: true,
+		enableRangeSelection: true,
+    disabledWeekDays: [0, 6],
+
+		mouseOnDay: function(e) {
+			if(e.events.length > 0) {
+				$(e.element).data('mouse-on-day', true);
+			
+				var content = '';
+				
+				for(var i in e.events) {
+					content += '<div class="event-tooltip-content">'
+									+ '<div class="event-name" style="color:' + e.events[i].color + '">' + e.events[i].name + '</div>'
+                  + '-----------------------------------------------'
+								+ '</div>';
+				}
+			
+				// Initialize the popover
+				var popover = $(e.element).popover({ 
+					trigger: 'manual',
+					container: 'body',
+					html:true,
+					content: content,
+					placement: 'bottom'
+				});
+				
+				// Get the popover DOM element
+				var popover =  $(e.element).data('bs.popover').tip();
+				
+				var alreadyVisible = false;
+				
+				// Hide all the old popover visible (only for the case of switching of two adjacent popover).
+				$('div.popover:visible').each(function() {
+					if($(this).get(0) == popover.get(0)) {
+						alreadyVisible = true;
+					}
+					else {
+						// If the popover is not the current one, hide it.
+						$(this).hide();
+					}
+				});
+				
+				if(!alreadyVisible) {
+					$(popover).mouseenter(function () {
+						$(e.element).data('mouse-on-popover', true);
+					})
+					
+					$(popover).mouseleave(function () {
+						$(e.element).data('mouse-on-popover', false);
+						
+						setTimeout(hidePopover, 50, $(e.element));
+					})
+				
+					$(e.element).popover('show');
+				}
+			}
+		},
+		mouseOutDay: function(e) {
+			if(e.events.length > 0) {
+				$(e.element).data('mouse-on-day', false);
+					
+				setTimeout(hidePopover, 50, $(e.element));
+			}
+		},
+		dayContextMenu: function(e) {
+			$(e.element).popover('hide');
+		},
+		dataSource: [
+      {
+        id: 0,
+        name: 'Rappels sur la programmation objet',
+        startDate: new Date(2014, 9, 6),
+        endDate: new Date(2014, 9, 10),
+        color: '#87CEFA'
+      },
+      {
+        id: 1,
+        name: 'Le langage de requête SQL',
+        startDate: new Date(2014, 9, 13),
+        endDate: new Date(2014, 9, 17),
+        color: '#87CEFA'
+      },
+      {
+        id: 2,
+        name: 'Procédures stockées avec PL-SQL',
+        startDate: new Date(2014, 10, 17),
+        endDate: new Date(2014, 10, 21),
+        color: '#87CEFA'
+      },
+      {
+        id: 3,
+        name: 'Programmation C# .Net partie 1',
+        startDate: new Date(2015, 0, 5),
+        endDate: new Date(2015, 0, 16),
+        color: '#87CEFA'
+      },
+	  {
+        id: 4,
+        name: "Tests d'application",
+        startDate: new Date(2016, 3, 18),
+        endDate: new Date(2016, 3, 22),
+        color: '#87CEFA'
+      },
+      {
+        id: 10,
+        name: 'Rappels sur la programmation objet',
+        startDate: new Date(2014, 09, 06),
+        endDate: new Date(2014, 09, 10),
+        color: 'red'
+      },
+      {
+        id: 11,
+        name: 'Le language de requête SQL',
+        startDate: new Date(2014, 10, 3),
+        endDate: new Date(2014, 10, 7),
+        color: 'red'
+      }
+    ]
+	});
+	
+</script>
+{% endblock %}

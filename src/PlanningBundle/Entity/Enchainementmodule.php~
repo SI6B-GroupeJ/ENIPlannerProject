@@ -1,0 +1,67 @@
+<?php
+
+namespace PlanningBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Enchainementmodule
+ *
+ * @ORM\Table(name="EnchainementModule", indexes={@ORM\Index(name="IDX_BB2675E128B0F9AB", columns={"IdCalendrier"}), @ORM\Index(name="IDX_BB2675E1E7FED6FD", columns={"IdModuleIndependant"})})
+ * @ORM\Entity
+ */
+class Enchainementmodule
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="IdEnchainement", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idenchainement;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="IdModule", type="integer", nullable=false)
+     */
+    private $idmodule;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DureeEnSemaines", type="smallint", nullable=false)
+     */
+    private $dureeensemaines;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DureeEnHeures", type="smallint", nullable=false)
+     */
+    private $dureeenheures;
+
+    /**
+     * @var \Calendrier
+     *
+     * @ORM\ManyToOne(targetEntity="Calendrier")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="IdCalendrier", referencedColumnName="IdCalendrier")
+     * })
+     */
+    private $idcalendrier;
+
+    /**
+     * @var \Moduleindependant
+     *
+     * @ORM\ManyToOne(targetEntity="Moduleindependant")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="IdModuleIndependant", referencedColumnName="IdModuleIndependant")
+     * })
+     */
+    private $idmoduleindependant;
+
+
+}
+

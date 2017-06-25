@@ -1,0 +1,690 @@
+{% extends 'menuAdmin.html.twig' %}
+
+{% block body %}
+<!--//////////  MENU   //////////-->
+      <section id="main-content">
+          <section class="wrapper">            
+<div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li><i class="fa fa-laptop"></i>Modification d'un modele de planning</li>                          
+                    </ol>
+                </div>
+
+  <section class="panel">
+      <div class="col-md-9">
+        <div id="calendar"></div>
+      </div>
+
+        <!--/////////FORMULAIRE///////////-->
+
+        <div class="col-md-3">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Liste des alertes
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                          <form class="form-horizontal" role="form">
+                          
+                            <table class="table table-striped table-advance table-hover">
+                                   <tbody>
+                                      <tr>
+                                         <th>Libelle</th>
+                                         <th>Action</th>
+                                      </tr>
+                                      <tr>
+                                         <td>Test d'application avant JEE 1</td>
+                                         <td>
+                                          <div class="btn-group">
+                                              <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                          </div>
+                                          </td>
+                                      </tr>                        
+                                   </tbody>
+                              </table>
+                               <button class="btn btn-primary pull-right" type="submit" >Réinitialiser</button>
+                            </form>
+                            </div>
+                      </section>            
+              </div>
+        </section>
+
+          <div class="col-xs-12">
+                          <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th>Libelle</th>
+                                 <th>Date de Début</th>
+                                 <th>Date de Fin</th>
+                                 <th>Duree Heures</th>
+                                 <th>Lieu</th>
+                                 <th>Nombre stagiaires</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>Programmation orientée objet</td>
+                                 <td>15/09/2014</td>
+                                 <td>26/09/2014</td>
+                                 <td>70</td>
+                                 <td>Nantes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" data-toggle="modal" data-target="#myModalModifDate"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              </tr>
+                              <tr>
+                                 <td>SQL</td>
+                                 <td>29/09/2014</td>
+                                 <td>03/10/2014</td>
+                                 <td>35</td>
+                                 <td>Nantes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                               <tr>
+                                 <td>Développement avec Java JEE partie 1</td>
+                                 <td>06/10/2014</td>
+                                 <td>17/10/2014</td>
+                                 <td>70</td>
+                                 <td>Nantes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                               <tr>
+                                 <td>Tests d'application</td>
+                                 <td>20/10/2014</td>
+                                 <td>24/10/2014</td>
+                                 <td>35</td>
+                                 <td>Nantes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                 <td>Développement avec JEE partie 2</td>
+                                 <td>07/04/2015</td>
+                                 <td>17/04/2015</td>
+                                 <td>63</td>
+                                 <td>Nantes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                 <td>JEE avancé</td>
+                                 <td>04/05/2015</td>
+                                 <td>15/05/2015</td>
+                                 <td>35</td>
+                                 <td>Nantes</td>
+                                 <td>10</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="glyphicon glyphicon-pencil"></i></a>
+                                      <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>                      
+                              </tbody>
+                        </table>
+                        <div class="btn-group">
+                          <button class="btn btn-primary" data-toggle="modal" data-target="#myModalRecherche">Rechercher Module</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModalCompare">Comparer</button>
+                        </div> 
+                       <a class="btn btn-primary  btn-lg pull-right" href="{{ path('consultation_modele_planning') }}">Valider</a>
+                </div>
+</div>
+                
+
+<!--//////// FIN STEP 2 //////////-->
+
+
+
+</section>
+      </section>
+<!--/////////// FIN PAGE //////////-->
+ 
+<!--//////// DEBUT MODAL RECHERCHE //////////-->
+<div id="myModalRecherche" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Rechercher un module</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Recherche de module
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Libelle</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle" placeholder="Libelle">
+                                      </div>
+                                  </div>
+                                  <!--///// Duree en heure //////-->
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Lieu</label>
+                                      <div class="col-md-9">
+                                          <select class="form-control" id="exampleSelect1">
+                                                <option>Nantes</option>
+                                                <option>Rennes</option>
+                                                <option>Niort</option>
+                                          </select> 
+
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Type formation</label>
+                                      <div class="col-md-9">
+                                          <select class="form-control" id="exampleSelect2">
+                                                <option>DL</option>
+                                                <option>TSRI</option>
+                                                <option>T2SI</option>
+                                                <option>CDI</option>
+                                                <option>ASR</option>
+                                                <option>MS2I-SI</option>
+                                                <option>MS2I-INF</option>
+                                            </select> 
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Date Début</label>
+                                      <div class="col-md-9">
+                                        <div class="input-group date" id='form_date_debut_recherche'>
+                                          <input class="form-control" type="text">
+                                          <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Date Fin</label>
+                                      <div class="col-md-9">
+                                          <div class="input-group date" id='form_date_fin_recherche'>
+                                            <input class="form-control" type="text">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                          </div>
+                                          
+                                      </div>
+                                  </div>
+                                  <button class="btn btn-primary pull-right" type="submit" >Rechercher</button>
+                            <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                           <br/><br/>
+                              <tr>
+                                 <th>Libelle</th>
+                                 <th>Duree /H</th>
+                                 <th>Date Début</th>
+                                 <th>Date Fin</th>
+                                 <th>Nombre stagiaires</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>Développement partie 2 JEE</td>
+                                 <td>70</td>
+                                 <td>30/05/2014</td>
+                                 <td>10/05/2014</td>
+                                 <td>25</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                 <td>JEE</td>
+                                 <td>70</td>
+                                 <td>30/06/2014</td>
+                                 <td>15/06/2014</td>
+                                 <td>25</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>                          
+                           </tbody>
+                        </table>
+                      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL //////////-->
+
+
+
+<!--//////// DEBUT MODAL COMPARE //////////-->
+<div id="myModalCompare" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Rechercher stagiaire</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Recherche stagiaire
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Prénom</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle">
+                                      </div>
+                                  </div>
+								  <br><br>
+                                  <!--///// Duree en heure //////-->
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Nom</label>
+                                      <div class="col-md-9">
+                                          <input type="dureeH" class="form-control" id="inputDureeH">
+                                      </div>
+                                  </div>
+								  <br><br>
+								  <button class="btn btn-primary pull-right" type="submit">Rechercher</button>
+									<br><br>
+								</form>
+                                   <table class="table table-striped table-advance table-hover">
+                                     
+                           <tbody>
+                              <tr>
+                                 <th>Nom</th>
+                                 <th>Prenom</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>Matthieu</td>
+                                 <td>FOLL</td>
+                                 <td>
+                                  <div class="btn-group pull-right">
+                                      <a class="btn btn-primary" href="#">Ouvrir</a>
+                                  </div>
+                                  </td>
+                              </tr>                          
+                           </tbody>
+                        </table>
+                      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL COMPARE//////////-->
+
+<!--//////// DEBUT MODAL MODIF DATE //////////-->
+<div id="myModalModifDate" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Rechercher un module</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Recherche de module
+                          </header>
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                              <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Date début</label>
+                                      <div class="col-md-9">
+                                          <div class="input-group date" id='form_date_debut_modif'>
+                      <input class="form-control" type="text">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                                          <div ></br></div>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Date Fin</label>
+                                      <div class="col-md-9">
+                                          <div class="input-group date" id='form_date_fin_modif'>
+                      <input class="form-control" type="text">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                                          <div ></br></div>
+                                      </div>
+                                  </div>
+
+                                  <!--///// Duree en heure //////-->
+                                  <div class="form-group">
+                                      <label for="inputPassword1" class="col-md-3 control-label">Site</label>
+                                      <div class="col-md-9">
+                                          <input type="dureeH" class="form-control" id="inputDureeH" placeholder="">
+                                          <div ></br></div>
+                                          <button class="btn btn-primary pull-right" type="submit">Rechercher</button>
+                                          <div ></br></br></div>
+                                      </div>
+                                  </div>
+                            <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th>Nom</th>
+                                 <th>Date Début</th>
+                                 <th>Date Fin</th>
+                                 <th>Site</th>
+                                 <th>Action</th>
+
+                              </tr>
+                              <tr>
+                                 <td>JEE</td>
+                                 <td>15/05/2014</td>
+                                 <td>20/05/2014</td>
+                                 <td>Nantes</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                 <td>JEE</td>
+                                 <td>15/07/2014</td>
+                                 <td>20/07/2014</td>
+                                 <td>Nantes</td>
+                                 <td>
+                                  <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                  </div>
+                                  </td>
+                              </tr>                              
+                           </tbody>
+                        </table>
+                      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL MODIF DATE//////////-->
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+  
+  
+  function hidePopover(elt) {
+  // Hiding the popover only if the mouse is not on the day AND not on the popover.
+  if(!elt.data('mouse-on-day') && !elt.data('mouse-on-popover')) {
+    elt.popover('hide');
+  }
+  }
+  
+  var currentYear = new Date().getFullYear();
+  
+  $('#calendar').calendar({ 
+    language: 'fr',
+    startYear: 2014,
+    style: 'background',
+    enableContextMenu: true,
+    enableRangeSelection: true,
+    disabledWeekDays: [0, 6],
+    mouseOnDay: function(e) {
+      if(e.events.length > 0) {
+        $(e.element).data('mouse-on-day', true);
+      
+        var content = '';
+        
+        for(var i in e.events) {
+          content += '<div class="event-tooltip-content">'
+                  + '<div class="event-name" style="color:' + e.events[i].color + '">' + e.events[i].name + '</div>'
+                + '</div>';
+        }
+      
+        // Initialize the popover
+        var popover = $(e.element).popover({ 
+          trigger: 'manual',
+          container: 'body',
+          html:true,
+          content: content,
+          placement: 'bottom'
+        });
+        
+        // Get the popover DOM element
+        var popover =  $(e.element).data('bs.popover').tip();
+        
+        var alreadyVisible = false;
+        
+        // Hide all the old popover visible (only for the case of switching of two adjacent popover).
+        $('div.popover:visible').each(function() {
+          if($(this).get(0) == popover.get(0)) {
+            alreadyVisible = true;
+          }
+          else {
+            // If the popover is not the current one, hide it.
+            $(this).hide();
+          }
+        });
+        
+        if(!alreadyVisible) {
+          $(popover).mouseenter(function () {
+            $(e.element).data('mouse-on-popover', true);
+          })
+          
+          $(popover).mouseleave(function () {
+            $(e.element).data('mouse-on-popover', false);
+            
+            setTimeout(hidePopover, 50, $(e.element));
+          })
+        
+          $(e.element).popover('show');
+        }
+      }
+    },
+    mouseOutDay: function(e) {
+      if(e.events.length > 0) {
+        $(e.element).data('mouse-on-day', false);
+          
+        setTimeout(hidePopover, 50, $(e.element));
+      }
+    },
+    dayContextMenu: function(e) {
+      $(e.element).popover('hide');
+    },
+    dataSource: [
+      {
+        id: 0,
+        name: 'Programmation orientée object',
+        startDate: new Date(2014, 8, 15),
+        endDate: new Date(2014, 8, 26),
+        color: '#87CEFA'
+      },
+      {
+        id: 1,
+        name: 'SQL',
+        startDate: new Date(2014, 8, 29),
+        endDate: new Date(2014, 9, 03),
+        color: '#87CEFA'
+      },
+      {
+        id: 2,
+        name: 'JEE partie 1',
+        startDate: new Date(2014, 9, 06),
+        endDate: new Date(2014, 9, 17),
+        color: '#87CEFA'
+      },
+      {
+        id: 3,
+        name: 'Tests d application',
+        startDate: new Date(2014, 9, 20),
+        endDate: new Date(2014, 9, 24),
+        color: '#87CEFA'
+      },
+      {
+        id: 4,
+        name: 'JEE partie 2',
+        startDate: new Date(2015, 5, 07),
+        endDate: new Date(2015, 5, 17),
+        color: '#87CEFA'
+      },
+      {
+        id: 5,
+        name: 'JEE avancé',
+        startDate: new Date(2015, 6, 04),
+        endDate: new Date(2015, 5, 17),
+        color: '#87CEFA'
+      },
+      {
+        id: 6,
+        name: 'Analyse etconception d une application',
+        startDate: new Date(2015, 7, 22),
+        endDate: new Date(2015, 8, 10),
+        color: '#87CEFA'
+      },
+      {
+        id: 7,
+        name: 'Projet réalisation application intranet',
+        startDate: new Date(2015, 9, 24),
+        endDate: new Date(2015, 10, 04),
+        color: '#87CEFA'
+      },
+      {
+        id: 8,
+        name: 'Architecture applicatives',
+        startDate: new Date(2015, 10, 21),
+        endDate: new Date(2015, 10, 25),
+        color: '#87CEFA'
+      },
+      {
+        id: 9,
+        name: 'Procédure stockées avec PL-SQL',
+        startDate: new Date(2015, 11, 26),
+        endDate: new Date(2015, 11, 30),
+        color: '#87CEFA'
+         },
+    ]
+  });
+  
+    $('#form_date_debut').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true
+    });
+    $('#form_date_fin').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true
+    });
+  
+  $('#form_date_debut_recherche').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true
+    });
+    $('#form_date_fin_recherche').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true
+    });
+  
+  $('#form_date_debut_modif').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true
+    });
+    $('#form_date_fin_modif').datetimepicker({
+      format: 'DD MMMM YYYY',
+      widgetPositioning: {
+        horizontal: 'right' 
+      },
+      showTodayButton: true
+    });
+  
+});
+</script>
+{% endblock %}

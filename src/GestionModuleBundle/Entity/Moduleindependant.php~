@@ -1,0 +1,61 @@
+<?php
+
+namespace GestionModuleBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Moduleindependant
+ *
+ * @ORM\Table(name="ModuleIndependant")
+ * @ORM\Entity
+ */
+class Moduleindependant
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="IdModuleIndependant", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idmoduleindependant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LibelleModuleInd", type="string", length=255, nullable=false)
+     */
+    private $libellemoduleind;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LibelleCourtModuleInd", type="string", length=255, nullable=false)
+     */
+    private $libellecourtmoduleind;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DetailModulInd", type="string", length=255, nullable=false)
+     */
+    private $detailmodulind;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DureeEnHeures", type="smallint", nullable=false)
+     */
+    private $dureeenheures;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DureeEnSemaines", type="smallint", nullable=false)
+     */
+    private $dureeensemaines;
+
+
+}
+

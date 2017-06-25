@@ -1,0 +1,336 @@
+{% extends 'menuAdmin.html.twig' %}
+
+{% block body %}
+    {{ dump(user) }}
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              <div class="row">
+                <!-- profile-widget -->
+                <div class="col-lg-12">
+                    <div class="profile-widget profile-widget-info">
+                          <div class="panel-body">
+                            <div class="col-lg-2 col-sm-2">
+                              <h4>{{ user.username }}</h4>
+                                <h6>Administrateur</h6>
+                                <br>
+                            </div>  
+                          </div>
+                    </div>
+                </div>
+              </div>
+              <!-- page start-->
+              <div class="row">
+                 <div class="col-lg-12">
+                    <section class="panel">
+                          <header class="panel-heading tab-bg-info">
+                              <ul class="nav nav-tabs">
+                                  <li class="active">
+                                      <a data-toggle="tab" href="#profile">
+                                          Profil
+                                      </a>
+                                  </li>
+                                  <li class="">
+                                      <a data-toggle="tab" href="#edit-profile">
+                                          Modifier Profil
+                                      </a>
+                                  </li>
+                                  <li class="">
+                                      <a data-toggle="tab" href="#test">
+                                          Modifier Mot de passe
+                                      </a>
+                                  </li>
+                                  <li class="">
+                                      <a data-toggle="tab" href="#gestionRole">
+                                          Gestion des comptes
+                                      </a>
+                                  </li>
+                              </ul>
+                          </header>
+                          <div class="panel-body">
+                              <div class="tab-content">
+                                  <!-- profile -->
+                                  <div id="profile" class="tab-pane active">
+                                    <section class="panel">
+                                      <div class="panel-body bio-graph-info">
+                                          <h1>Profil</h1>
+                                          <div class="row">
+                                              <div class="bio-row">
+                                                  <p><span>Nom Prenom</span>: {{ user.username }} </p>
+                                                  <p><span>Adresse email</span>: {{ user.email }}</p>
+                                                  <p><span>Groupe </span>: Administrateur</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </section>
+                                      <section>
+                                          <div class="row">                                              
+                                          </div>
+                                      </section>
+                                  </div>
+                                  <!-- edit-profile -->
+                                  <div id="edit-profile" class="tab-pane">
+                                    <section class="panel">                                          
+                                          <div class="panel-body bio-graph-info">
+                                              <h1>Modifier Profil</h1>
+                                              <form class="form-horizontal" role="form">                                                  
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Nom</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="f-name" value="OLLIVIER">
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Prénom</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="l-name" value="Stéphane">
+                                                      </div>
+                                                  </div>
+                                                  
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Adresse email</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="c-name" value="stephane.ollivier@campus-eni.fr">
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <div class="col-lg-offset-2 col-lg-10">
+                                                          <button type="submit" class="btn btn-primary">Enregistrer</button>
+                                                          <button type="button" class="btn btn-danger">Annuler</button>
+                                                      </div>
+                                                  </div>
+                                              </form>
+                                          </div>
+                                      </section>
+              
+                                  </div>
+
+
+<!--/////// Modification MDP /////////-->
+                              <div id="test" class="tab-pane">
+                                    <section class="panel">
+                                      <div class="panel-body bio-graph-info">
+                                          <h1>Modifier Mot de passe</h1>
+                                         <form class="form-horizontal" role="form">                                                  
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Ancien mot de passe</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="f-name" placeholder=" ">
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Nouveau mot de passe</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="l-name" placeholder=" ">
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">Confirmer mot de passe</label>
+                                                      <div class="col-lg-6">
+                                                          <input type="text" class="form-control" id="l-name" placeholder=" ">
+                                                      </div>
+                                                  </div>
+                                                   <div class="form-group">
+                                                      <div class="col-lg-offset-2 col-lg-10">
+                                                          <button type="submit" class="btn btn-primary">Enregistrer</button>
+                                                          <button type="button" class="btn btn-danger">Annuler</button>
+                                                      </div>
+                                                  </div>
+                                              </form>     
+                                      </div>
+                                    </section>
+                                  </div>
+                                  <!--/////// FIN Modif MDP /////////-->
+                                  <!--/////// Debut Gestion role /////////-->
+                                  <div id="gestionRole" class="tab-pane">
+                                    <section class="panel">
+                                      <div class="panel-body bio-graph-info">
+                                          <h1>Gestion des comptes</h1>
+                                          <div class="col-lg-12">
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nom</th>
+                                                        <th>Prénom</th>
+                                                        <th>Adresse mail</th>
+                                                        <th>Rôle</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                      <td>OLLIVIER</td>
+                                                      <td>Stéphane</td>
+                                                      <td>Stephane.ollivier@campus-eni.fr</td>
+                                                      <td>Administrateur</td>
+                                                      <td>
+                                                          <div class="btn-group">
+                                                              <a class="btn btn-primary" data-toggle="modal" data-target="#myModalModificationCompte"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                          </div>
+                                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalSupprimer"><i class="glyphicon glyphicon-trash"></i></a>
+                                                              </td>
+                                                      </tr>
+                                                      <tr>
+                                                      <td>GABILLAUD</td>
+                                                      <td>Jérôme</td>
+                                                      <td>Jerome.gabillaud@campus-eni.fr</td>
+                                                      <td>Consultant</td>
+                                                      <td>
+                                                          <div class="btn-group">
+                                                              <a class="btn btn-primary" data-toggle="modal" data-target="#myModalModificationCompte"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                          </div>
+                                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModalSupprimer"><i class="glyphicon glyphicon-trash"></i></a>
+                                                              </td>
+                                                      </tr>
+                                                </tbody>
+                                            </table>
+											<button class="btn btn-primary" data-toggle="modal" data-target="#myModalCreationCompte">Création compte</button>
+                                          </div>
+                                      </div>
+                                    </section>
+                                  </div>
+                              </div>
+                          </div>
+                      </section>
+                 </div>
+              </div>
+          </section>
+      </section>
+
+  </section>
+
+
+  <!--//////// DEBUT MODAL creation compte //////////-->
+<div id="myModalCreationCompte" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Création compte utilisateur</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Création compte utilisateur
+                          </header>
+                         
+                          <div class="panel-body">
+                            <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Nom</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle" placeholder="Nom de l'utilisateur">
+                                          </br>
+                                      </div>
+                                      
+                                      <label for="inputLibelle" class="col-md-3 control-label">Prénom</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle" placeholder="Prénom de l'utilisateur">
+                                          </br>
+                                      </div>
+                                      
+                                      <label for="inputLibelle" class="col-md-3 control-label">Adresse mail</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle" placeholder="Adresse mail de l'utilisateur">
+                                          </br>
+                                      </div>                                   
+                                      <label for="inputLibelle" class="col-md-3 control-label">Rôle</label>
+                                      <div class="col-md-9">
+                                          <label class="checkbox-inline"><input type="checkbox" value="">Administrateur</label>
+                                          <label class="checkbox-inline"><input type="checkbox" value="">Constultant</label>
+                                      </div>
+                                    
+                               </div>
+                              
+                              
+                          </div> 
+                      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger">Annuler</button>
+        <button type="submit" class="btn btn-primary">Valider</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+  <!--//////// FIN MODAL creation compte //////////-->
+
+    <!--//////// DEBUT MODAL modification compte //////////-->
+<div id="myModalModificationCompte" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modification compte utilisateur</h4>
+        </div>
+      <div class="modal-body">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Modification compte utilisateur
+                          </header>
+                         
+                          <div class="panel-body">
+                            <div class="form-group">
+                                      <label for="inputLibelle" class="col-md-3 control-label">Nom</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle" value='OLLIVIER'>
+                                          </br>
+                                      </div>
+                                      
+                                      <label for="inputLibelle" class="col-md-3 control-label">Prénom</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle" value='Stéphane'>
+                                          </br>
+                                      </div>
+                                      
+                                      <label for="inputLibelle" class="col-md-3 control-label">Adresse mail</label>
+                                      <div class="col-md-9">
+                                          <input type="libelle" class="form-control" id="inputLibelle" value='stephane.ollivier@campus-eni.fr'>
+                                          </br>
+                                      </div>                            
+                                      <label for="inputLibelle" class="col-md-3 control-label">Rôle</label>
+                                      <div class="col-md-9">
+                                          <label class="checkbox-inline"><input type="checkbox" value="">Administrateur</label>
+                                          <label class="checkbox-inline"><input type="checkbox" value="">Constultant</label>
+                                      </div>
+                                    
+                               </div>
+                              
+                              
+                          </div> 
+                      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger">Annuler</button>
+        <button type="submit" class="btn btn-primary">Valider</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+  <!--//////// FIN MODAL creation compte //////////-->
+
+  <!--//////// DEBUT MODAL supprimer //////////-->
+<div id="myModalSupprimer" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Suppression compte utilisateur</h4>
+        </div>
+      <div class="modal-body">
+  
+                          <!--///// LIBELLE DU MODULE //////-->
+                          <div class="panel-body">
+                            <p>Voulez-vous supprimer ce compte utilisateur ? </p>
+                          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Supprimer</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!--//////// FIN MODAL supprimer //////////-->
+{% endblock %}
