@@ -1,94 +1,94 @@
 {% extends 'menuAdmin.html.twig' %}
       
 {% block body %}
-<!-- DEBUT PAGE -->       
-      <section id="main-content">
-          <section class="wrapper">            
-                <div class="col-lg-12">
-                    <ol class="breadcrumb">
-                        <li><i class="fa fa-laptop"></i>Modification d'un module Indépendant</li>                          
-                    </ol>
-                </div>
-                <div><br/></div>
-<!--
-/////// FORME ////////
--->
-<div class="col-xs-6">
+    <!-- DEBUT PAGE -->
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-laptop"></i>Modification d'un module Indépendant</li>
+                </ol>
+            </div>
+            <div><br/></div>
+            <!--
+            /////// FORME ////////
+            -->
+            <div class="col-xs-6">
                 <div class="x_panel">
                     <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
+                </div>
+                <div class="x_content">
                     <form class="form-horizontal form-label-left">
 
-                      <!--//////   Libelle Module   //////////-->
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Libelle</label>
-                        <div class="col-md-9 col-sm-12 col-xs-12">
-                          <input type="text" class="form-control" value="AngularJS">
+                        <!--//////   Libelle Module   //////////-->
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12">Libelle</label>
+                            <div class="col-md-9 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control" value="AngularJS">
+                            </div>
                         </div>
-                      </div>
-                      <!--//////   Duree en heures   //////////-->
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Durée en heures</label>
-                        <div class="col-md-9 col-sm-12 col-xs-12">
-                          <input type="text" class="form-control" value="60">
+                        <!--//////   Duree en heures   //////////-->
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12">Durée en heures</label>
+                            <div class="col-md-9 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control" value="60">
+                            </div>
                         </div>
-                      </div>
-                      <!--//////   Durée en semaine   //////////-->
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-12 col-xs-12" for="exampleSelect1">Durée en semaine</label>
-                        <div class="col-md-9 col-sm-12 col-xs-12">
-                          <select class="form-control" id="exampleSelect1">
-                            <option>2</option>
-                            <option>1</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
+                        <!--//////   Durée en semaine   //////////-->
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12" for="exampleSelect1">Durée en semaine</label>
+                            <div class="col-md-9 col-sm-12 col-xs-12">
+                                <select class="form-control" id="exampleSelect1">
+                                    <option>2</option>
+                                    <option>1</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
                         </div>
-                      </div>
-                      
-                      <!--///////////// Libelle court //////////-->
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-12 col-xs-12">Libelle court</label>
-                        <div class="col-md-9 col-sm-12 col-xs-12">
-                          <input type="text" class="form-control" value=" AnguJS">
-                        </div>
-                      </div>
-                      <!--///////////// Detail //////////-->
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-12 col-xs-12" for="exampleTextarea">Détail</label>
-                        <div class="col-md-9 col-sm-12 col-xs-12">
-                            <textarea class="form-control" id="exampleTextarea" rows="3" value=" Cours avancé sur le javaScript"></textarea>
-                        </div>
-                      </div>
 
-                       <!--///////////// BOUTONS //////////-->
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                          <a class="btn btn-success" href="{{ path('consultation_module_independant') }}">Modifier</a>
+                        <!--///////////// Libelle court //////////-->
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12">Libelle court</label>
+                            <div class="col-md-9 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control" value=" AnguJS">
+                            </div>
                         </div>
-                      </div>
+                        <!--///////////// Detail //////////-->
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-12 col-xs-12" for="exampleTextarea">Détail</label>
+                            <div class="col-md-9 col-sm-12 col-xs-12">
+                                <textarea class="form-control" id="exampleTextarea" rows="3" value=" Cours avancé sur le javaScript"></textarea>
+                            </div>
+                        </div>
+
+                        <!--///////////// BOUTONS //////////-->
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                <a class="btn btn-success" href="{{ path('affichage_module_independant') }}">Modifier</a>
+                            </div>
+                        </div>
                     </form>
-                  </div>
                 </div>
+            </div>
 
-          </section>
-      </section>
-      <!--main content end-->
+        </section>
+    </section>
+    <!--main content end-->
 
-  <!-- container section start -->
+    <!-- container section start -->
 
-<div class="modal fade" id="myModal-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header modal-header-success">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title">Enregistrement Validé !!</h4>
+    <div class="modal fade" id="myModal-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Enregistrement Validé !!</h4>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
